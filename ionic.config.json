@@ -1,0 +1,7 @@
+{
+  "name": "DataCollect",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
