@@ -1,0 +1,129 @@
+@use "sass:map";
+
+html {
+    font-size: 1px;
+}
+
+body {
+    font-size: 12rem;
+}
+
+.Full {
+    width: 100%;
+    height: 100%;
+}
+
+//--------------------------------------------
+// *           Flexbox Utilities             *
+//--------------------------------------------
+
+.Flex-space, .Flex-grow {
+    flex: 1;
+}
+
+// Flex container mixin to generate utility classes
+@mixin FlexContainer($justify, $align, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+$dirClassNames: col, row, colrev, rowrev;
+$valueClassNames: "start", "end", "center", "around", "between";
+$cssValueMap: ("start": "flex-start", "end": "flex-end", "center": "center", "around": "space-around", "between": "space-between", "col": "column", "row": "row", "colrev": "column-reverse", "rowrev": "row-reverse");
+
+/** 
+ *  Nested loops to iterate over all possible combinations of "flex-direction", "jusitfy-content" and "align-items"
+ *  Compile with command "$ sass ./global.scss ./[output].css" to see the result.
+ *  
+ *  The generated class names are in the following pattern:
+ *  1. Full names: "Flex-row-center-start", "Flex-colrev-around-between", ...
+ *  2. Short-hands for default item alignment(center): "Flex-row-center", "Flex-col-between", ...
+ *  3. Short-hands for default content justification(flex-start) along with default item alignment(center):
+ *     "Flex-col", "Flex-row", "Flex-rowrev" and "Flex-colrev".
+ *  4. Additionally, "-row" can be omitted in the above class names as items are arranged in the row direction by default.
+ */
+
+@each $dir in $dirClassNames {
+    $dirValueMapped: map-get($cssValueMap, $dir);
+
+    // loop over every possible value of "justify-content" and "align-items".
+    @each $justifyValue in $valueClassNames {
+        $justifyValueMapped: map-get($cssValueMap, $justifyValue);
+
+        @each $alignValue in $valueClassNames {
+            $alignValueMapped: map-get($cssValueMap, $alignValue);
+
+            .Flex-#{$dir}-#{$justifyValue}-#{$alignValue} {
+                @include FlexContainer(#{$justifyValueMapped}, #{$alignValueMapped}, #{$dirValueMapped});
+            }
+
+            // Define a short-hand class name for default flex direction.
+            @if $dir == "row" {
+                .Flex-#{$justifyValue}-#{$alignValue} {
+                    @include FlexContainer(#{$justifyValueMapped}, #{$alignValueMapped}, #{$dirValueMapped});
+                }
+            }
+        }
+
+        // Define short-hand class names for default item alignment.
+        .Flex-#{$dir}-#{$justifyValue} {
+            @include FlexContainer(#{$justifyValueMapped}, center, #{$dirValueMapped});
+        }
+
+        // Define short-hand class names for default flex direction and item alignment
+        @if $dir == "row" {
+            .Flex-#{$justifyValue} {
+                @include FlexContainer(#{$justifyValueMapped}, center, #{$dirValueMapped});
+            }
+        }
+    }
+
+    // Define short-hand class names for default content justification and item alignment
+    .Flex-#{$dir} {
+        @include FlexContainer(flex-start, center, #{$dirValueMapped});
+    }
+
+    // Define short-hand class names for default flex direction, content justification and item alignment
+    @if $dir == "row" {
+        .Flex {
+            @include FlexContainer(flex-start, center, #{$dirValueMapped});
+        }
+    }
+}
+
+//--------------------------------------------
+// *          Text Clamp Utilities           *
+//--------------------------------------------
+
+/**
+ *  Clamping text that has more than two lines.
+ */
+@mixin ClampLines($lines: 2) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    overflow: hidden;
+}
+
+// Exceptionally, easier to keep text in a single line.
+.Line-clamp-1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@for $i from 2 through 10 {
+    .Line-clamp-#{$i} {
+        @include ClampLines($lines: $i);
+    }
+}
+
+//--------------------------------------------
+// *             Other Utilities             *
+//--------------------------------------------
+
+.Scroll-area {
+    overflow: auto;
+}

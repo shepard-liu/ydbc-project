@@ -1,0 +1,76 @@
+.geo-search {
+    .district {
+        margin-bottom: 20rem;
+    }
+
+    .province-select, .city-select {
+        background-color: #eee;
+        border-radius: 8rem;
+        padding: 5rem 10rem;
+        height: 36rem;
+        font-size: 18rem;
+
+        &:first-child {
+            margin-right: 20rem;
+        }
+    }
+
+    .search {
+        position: relative;
+    }
+
+    .input {
+        margin-right: 15rem;
+    }
+
+    .locate {
+        --padding-start: 0;
+        --padding-end: 0;
+    }
+
+    .locate-icon {
+        margin-right: 5rem;
+    }
+
+    .locate-text {
+        font-weight: bold;
+    }
+
+    .suggestion-list {
+        position: absolute;
+        bottom: calc(100% + 20rem);
+        left: 0;
+        z-index: 999;
+        border: 1px solid #ddd;
+        width: 100%;
+        border-radius: 10rem;
+        box-shadow: 10rem 10rem 20rem #6d6d6d42 , -10rem -10rem 20rem #bebebe99;
+        transition: opacity 300ms ease-in-out 100ms;
+
+        &[data-active='false'] {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
+    .suggestion-item {
+        height: 50rem;
+        width: 100%;
+        font-size: 18rem;
+        padding: 10rem 15rem;
+        position: relative;
+        transition: background-color 250ms ease-in-out;
+
+        &[data-selected='true'] {
+            background-color: #fae5bb;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: calc(100% - 40rem);
+            border-bottom: 1px solid #ddd;
+        }
+    }
+}

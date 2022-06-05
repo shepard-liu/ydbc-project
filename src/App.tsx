@@ -1,19 +1,18 @@
 import { Redirect, Route } from 'react-router-dom';
 import {
-  IonApp,
-  IonIcon,
-  IonLabel,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs,
-  setupIonicReact
+	IonApp,
+	IonIcon,
+	IonLabel,
+	IonRouterOutlet,
+	IonTabBar,
+	IonTabButton,
+	IonTabs,
+	setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+
+// Import Icons
+import { home, cloudUpload, search, map } from 'ionicons/icons';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -34,43 +33,70 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+import Main from './pages/main';
+import Publish from './pages/publish';
+import Explore from './pages/explore';
+import Visualize from './pages/visualize';
+import Help from './pages/help';
+import Confirm from './pages/confirm';
+import ProjectPage from './pages/projectPage';
+
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route exact path="/tab1">
-            <Tab1 />
-          </Route>
-          <Route exact path="/tab2">
-            <Tab2 />
-          </Route>
-          <Route path="/tab3">
-            <Tab3 />
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/tab1" />
-          </Route>
-        </IonRouterOutlet>
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon icon={triangle} />
-            <IonLabel>Tab 1</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={square} />
-            <IonLabel>Tab 3</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
-);
+const App: React.FC = () => {
+
+	return (
+		<IonApp>
+			<IonReactRouter>
+				<IonTabs>
+					<IonRouterOutlet>
+						<Route exact path="/main">
+							<Main />
+						</Route>
+						<Route exact path="/main/help">
+							<Help />
+						</Route>
+						<Route exact path="/publish">
+							<Publish />
+						</Route>
+						<Route exact path="/publish/confirm">
+							<Confirm />
+						</Route>
+						<Route exact path="/explore">
+							<Explore />
+						</Route>
+						<Route exact path="/explore/:prjId">
+							<ProjectPage />
+						</Route>
+						<Route exact path="/visualize">
+							<Visualize />
+						</Route>
+						<Route exact path="/">
+							<Redirect to="/main" />
+						</Route>
+					</IonRouterOutlet>
+					<IonTabBar slot="bottom">
+						<IonTabButton tab="main" href="/main">
+							<IonIcon icon={home} />
+							<IonLabel>首页</IonLabel>
+						</IonTabButton>
+						<IonTabButton tab="publish" href="/publish">
+							<IonIcon icon={cloudUpload} />
+							<IonLabel>需求发布</IonLabel>
+						</IonTabButton>
+						<IonTabButton tab="explore" href="/explore">
+							<IonIcon icon={search} />
+							<IonLabel>浏览需求</IonLabel>
+						</IonTabButton>
+						<IonTabButton tab="visualize" href="/visualize">
+							<IonIcon icon={map} />
+							<IonLabel>地图展示</IonLabel>
+						</IonTabButton>
+					</IonTabBar>
+				</IonTabs>
+			</IonReactRouter>
+		</IonApp>
+	);
+};
 
 export default App;

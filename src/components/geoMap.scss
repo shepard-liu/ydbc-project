@@ -1,0 +1,6 @@
+.geo-map {
+    width: var(--width, 100%);
+    height: var(--height, 200rem);
+    border-radius: var(--border-radius, 16rem);
+    border: var(--border, 1px solid #ddd);
+}

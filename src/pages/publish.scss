@@ -1,0 +1,115 @@
+.publish {
+    padding: 20rem;
+    background-color: white;
+    color: #333;
+
+    section {
+        margin-bottom: 20rem;
+    }
+
+    .prj-name {}
+
+    .prj-section-heading {
+        &::after {
+            content: "*";
+            color: rgb(230, 80, 80);
+            margin-left: 5rem;
+        }
+    }
+
+    .prj-name-input {}
+
+    .prj-type {}
+
+    .prj-type-select {
+        background-color: #eee;
+        border-radius: 8rem;
+        padding: 5rem 10rem;
+        height: 36rem;
+        font-size: 18rem;
+    }
+
+    .prj-contact-name {
+        margin-bottom: 10rem;
+    }
+
+    .prj-contact-tel {}
+
+    .prj-contact-tel-prefix {
+        padding: 0 8rem;
+        margin-right: 5rem;
+        font-size: 15rem;
+        color: #888;
+        font-weight: bold;
+        border-right: 1px solid #999;
+    }
+
+    .prj-mode-radio-group {
+        margin-top: 10rem;
+    }
+
+    .prj-budget-input-suffix {
+        font-size: 14rem;
+        color: #888;
+    }
+
+    .prj-design-item-wrapper {
+        border: solid #ddd;
+        border-width: 1px 0 1px 0;
+    }
+
+    .prj-design-item {
+        --border-width: 0;
+        --show-full-highlight: 0;
+    }
+
+    .prj-design-item-select-list {
+        margin-left: 15rem;
+        padding-top: 0;
+
+        &:empty {
+            padding: 0;
+        }
+    }
+
+    .prj-design-selected-step {
+        color: #aaa;
+        font-weight: bold;
+    }
+
+    .prj-design-select-steps {
+        &::part(text) {
+            display: none;
+        }
+    }
+
+    .prj-design-select-item-option {}
+
+    .prj-location {}
+
+    .prj-location-search {}
+
+    .prj-location-name, .prj-location-address {
+        color: #888;
+        text-align: right;
+        margin-top: 5rem;
+        font-size: 15rem;
+    }
+
+    .prj-location-map {
+        margin: 20rem 0;
+        --height: 350rem;
+    }
+
+    .publish-btn {
+        margin: 40rem 0 25rem 0;
+    }
+}
+
+.prj-design-select-popover {
+    .prj-design-select-item-option {
+        ion-checkbox {
+            --checkmark-color: white;
+        }
+    }
+}

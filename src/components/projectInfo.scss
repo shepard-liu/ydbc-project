@@ -1,0 +1,48 @@
+.project-info {
+    .design-item-list {
+        position: relative;
+
+        &::after {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+            width: calc(100% - 16rem);
+            left: 16rem;
+            content: "";
+            position: absolute;
+        }
+    }
+
+    .design-item-list-header, .project-item-label {
+        font-size: 18rem;
+        color: #666;
+        font-weight: bold;
+    }
+
+    .project-item-icon {
+        width: 20rem;
+        height: 20rem;
+        margin-right: 10rem;
+    }
+
+    .design-item {
+        margin-left: 20rem;
+
+        &:last-child {
+            --inner-border-width: 0;
+        }
+    }
+
+    .design-item-steps {
+        padding: 10rem 0;
+        color: #666;
+        font-size: 14rem;
+        text-align: end;
+    }
+
+    .project-item {}
+
+    .project-item-label {}
+
+    .project-item-content {
+        max-width: 50%;
+    }
+}

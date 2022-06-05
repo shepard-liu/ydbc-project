@@ -1,0 +1,47 @@
+.main {
+    background: white;
+    padding: 60rem 25rem 0 25rem;
+
+    .heading {
+        background-image: linear-gradient(225deg, #32C5FF 0%, #B620E0 51%, #F7B500 100%);
+        font-size: 36rem;
+        margin: auto;
+        text-align: center;
+        background-clip: text;
+        color: transparent;
+        font-weight: bolder;
+    }
+
+    .shortcuts {
+        width: 100%;
+        gap: 40rem;
+    }
+
+    .shortcut-item {
+        width: 100%;
+        height: 80rem;
+        gap: 20rem;
+        text-decoration: none;
+        background-image: linear-gradient(225deg, #EFFAFF 0%, #FBEBFF 50%, #FFFAEC 100%);
+        border-radius: 13rem;
+        box-shadow: 11rem 11rem 22rem #cfcfcf, -11rem -11rem 22rem #fdfdfd;
+
+        ion-icon {
+            width: 30rem;
+            height: 30rem;
+        }
+
+        span {
+            font-size: 26rem;
+            font-weight: bold;
+        }
+
+        transition: transform 200ms ease-in-out;
+
+        &:active {
+            transform: scale(1.03);
+        }
+
+        margin-bottom: 40rem;
+    }
+}

@@ -1,0 +1,57 @@
+.input {
+    width: var(--input-width, 100%);
+    height: var(--input-height);
+    overflow: hidden;
+
+    .input-wrapper {
+        width: 100%;
+        height: 100%;
+        min-height: var(--input-inner-min-height, 36rem);
+        padding: 5rem;
+        background-color: var(--input-inner-background-color, #eee);
+        border-radius: var(--input-inner-border-radius, 8rem);
+        border: var(--input-inner-border, 1px solid transparent);
+        transition: var(--input-transition, border-color 300ms ease-in-out);
+
+        &:focus-within {
+            border: var(--input-border-focus, 1px solid rgb(255, 194, 39));
+        }
+    }
+
+    .the-input {
+        height: 100%;
+        outline: none;
+        border: none;
+        appearance: none;
+        background-color: inherit;
+        font-size: var(--input-inner-font-size, 18rem);
+        color: var(--input-inner-color, #444);
+
+        &::placeholder {
+            color: var(--input-pld-color, rgb(163, 163, 163));
+            font-size: var(--input-pld-font-size, 18rem);
+        }
+    }
+
+    .prefix, .suffix {
+        height: 100%;
+    }
+
+    .error-messages {
+        padding: 0;
+        color: var(--input-err-color, rgb(255, 78, 78));
+        max-height: 0;
+        overflow: hidden;
+
+        div {
+            font-size: var(--input-err-font-size, 14rem);
+        }
+
+        transition: max-height 600ms ease-in-out;
+
+        &[data-active='true'] {
+            max-height: 999rem;
+            padding: 5rem;
+        }
+    }
+}

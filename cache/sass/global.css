@@ -1,0 +1,993 @@
+@use "sass:map";
+html {
+  font-size: 10px; }
+
+.Full {
+  width: 100%;
+  height: 100%; }
+
+.Flex-space {
+  flex: 1; }
+
+/** 
+ *  Nested loops to iterate over all possible combinations of "flex-direction", "jusitfy-content" and "align-items"
+ *  Compile with command "$ sass ./global.scss ./[output].css" to see the result.
+ *  
+ *  The generated class names are the following:
+ *  1. full names: "Flex-col"
+ */
+.Flex-col-start-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column; }
+
+.Flex-col-start-end {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: column; }
+
+.Flex-col-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column; }
+
+.Flex-col-start-around {
+  display: flex;
+  justify-content: flex-start;
+  align-items: space-around;
+  flex-direction: column; }
+
+.Flex-col-start-between {
+  display: flex;
+  justify-content: flex-start;
+  align-items: space-between;
+  flex-direction: column; }
+
+.Flex-col-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column; }
+
+.Flex-col-end-start {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column; }
+
+.Flex-col-end-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column; }
+
+.Flex-col-end-center {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column; }
+
+.Flex-col-end-around {
+  display: flex;
+  justify-content: flex-end;
+  align-items: space-around;
+  flex-direction: column; }
+
+.Flex-col-end-between {
+  display: flex;
+  justify-content: flex-end;
+  align-items: space-between;
+  flex-direction: column; }
+
+.Flex-col-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column; }
+
+.Flex-col-center-start {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column; }
+
+.Flex-col-center-end {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column; }
+
+.Flex-col-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.Flex-col-center-around {
+  display: flex;
+  justify-content: center;
+  align-items: space-around;
+  flex-direction: column; }
+
+.Flex-col-center-between {
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  flex-direction: column; }
+
+.Flex-col-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.Flex-col-around-start {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column; }
+
+.Flex-col-around-end {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: column; }
+
+.Flex-col-around-center {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column; }
+
+.Flex-col-around-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: space-around;
+  flex-direction: column; }
+
+.Flex-col-around-between {
+  display: flex;
+  justify-content: space-around;
+  align-items: space-between;
+  flex-direction: column; }
+
+.Flex-col-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column; }
+
+.Flex-col-between-start {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column; }
+
+.Flex-col-between-end {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column; }
+
+.Flex-col-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column; }
+
+.Flex-col-between-around {
+  display: flex;
+  justify-content: space-between;
+  align-items: space-around;
+  flex-direction: column; }
+
+.Flex-col-between-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: space-between;
+  flex-direction: column; }
+
+.Flex-col-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column; }
+
+.Flex-row-start-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row; }
+
+.Flex-start-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row; }
+
+.Flex-row-start-end {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: row; }
+
+.Flex-start-end {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: row; }
+
+.Flex-row-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-row-start-around {
+  display: flex;
+  justify-content: flex-start;
+  align-items: space-around;
+  flex-direction: row; }
+
+.Flex-start-around {
+  display: flex;
+  justify-content: flex-start;
+  align-items: space-around;
+  flex-direction: row; }
+
+.Flex-row-start-between {
+  display: flex;
+  justify-content: flex-start;
+  align-items: space-between;
+  flex-direction: row; }
+
+.Flex-start-between {
+  display: flex;
+  justify-content: flex-start;
+  align-items: space-between;
+  flex-direction: row; }
+
+.Flex-row-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-row-end-start {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: row; }
+
+.Flex-end-start {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: row; }
+
+.Flex-row-end-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: row; }
+
+.Flex-end-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: row; }
+
+.Flex-row-end-center {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-end-center {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-row-end-around {
+  display: flex;
+  justify-content: flex-end;
+  align-items: space-around;
+  flex-direction: row; }
+
+.Flex-end-around {
+  display: flex;
+  justify-content: flex-end;
+  align-items: space-around;
+  flex-direction: row; }
+
+.Flex-row-end-between {
+  display: flex;
+  justify-content: flex-end;
+  align-items: space-between;
+  flex-direction: row; }
+
+.Flex-end-between {
+  display: flex;
+  justify-content: flex-end;
+  align-items: space-between;
+  flex-direction: row; }
+
+.Flex-row-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-row-center-start {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row; }
+
+.Flex-center-start {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row; }
+
+.Flex-row-center-end {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: row; }
+
+.Flex-center-end {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: row; }
+
+.Flex-row-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-row-center-around {
+  display: flex;
+  justify-content: center;
+  align-items: space-around;
+  flex-direction: row; }
+
+.Flex-center-around {
+  display: flex;
+  justify-content: center;
+  align-items: space-around;
+  flex-direction: row; }
+
+.Flex-row-center-between {
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  flex-direction: row; }
+
+.Flex-center-between {
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  flex-direction: row; }
+
+.Flex-row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-row-around-start {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: row; }
+
+.Flex-around-start {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: row; }
+
+.Flex-row-around-end {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: row; }
+
+.Flex-around-end {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: row; }
+
+.Flex-row-around-center {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-around-center {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-row-around-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: space-around;
+  flex-direction: row; }
+
+.Flex-around-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: space-around;
+  flex-direction: row; }
+
+.Flex-row-around-between {
+  display: flex;
+  justify-content: space-around;
+  align-items: space-between;
+  flex-direction: row; }
+
+.Flex-around-between {
+  display: flex;
+  justify-content: space-around;
+  align-items: space-between;
+  flex-direction: row; }
+
+.Flex-row-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-row-between-start {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row; }
+
+.Flex-between-start {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row; }
+
+.Flex-row-between-end {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: row; }
+
+.Flex-between-end {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: row; }
+
+.Flex-row-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-row-between-around {
+  display: flex;
+  justify-content: space-between;
+  align-items: space-around;
+  flex-direction: row; }
+
+.Flex-between-around {
+  display: flex;
+  justify-content: space-between;
+  align-items: space-around;
+  flex-direction: row; }
+
+.Flex-row-between-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: space-between;
+  flex-direction: row; }
+
+.Flex-between-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: space-between;
+  flex-direction: row; }
+
+.Flex-row-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row; }
+
+.Flex-colrev-start-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-start-end {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-start-around {
+  display: flex;
+  justify-content: flex-start;
+  align-items: space-around;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-start-between {
+  display: flex;
+  justify-content: flex-start;
+  align-items: space-between;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-end-start {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-end-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-end-center {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-end-around {
+  display: flex;
+  justify-content: flex-end;
+  align-items: space-around;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-end-between {
+  display: flex;
+  justify-content: flex-end;
+  align-items: space-between;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-center-start {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-center-end {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-center-around {
+  display: flex;
+  justify-content: center;
+  align-items: space-around;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-center-between {
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-around-start {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-around-end {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-around-center {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-around-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: space-around;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-around-between {
+  display: flex;
+  justify-content: space-around;
+  align-items: space-between;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-between-start {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-between-end {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-between-around {
+  display: flex;
+  justify-content: space-between;
+  align-items: space-around;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-between-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: space-between;
+  flex-direction: column-reverse; }
+
+.Flex-colrev-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column-reverse; }
+
+.Flex-rowrev-start-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-start-end {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-start-around {
+  display: flex;
+  justify-content: flex-start;
+  align-items: space-around;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-start-between {
+  display: flex;
+  justify-content: flex-start;
+  align-items: space-between;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-end-start {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-end-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-end-center {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-end-around {
+  display: flex;
+  justify-content: flex-end;
+  align-items: space-around;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-end-between {
+  display: flex;
+  justify-content: flex-end;
+  align-items: space-between;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-center-start {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-center-end {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-center-around {
+  display: flex;
+  justify-content: center;
+  align-items: space-around;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-center-between {
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-around-start {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-around-end {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-around-center {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-around-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: space-around;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-around-between {
+  display: flex;
+  justify-content: space-around;
+  align-items: space-between;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-between-start {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-between-end {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-between-around {
+  display: flex;
+  justify-content: space-between;
+  align-items: space-around;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-between-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: space-between;
+  flex-direction: row-reverse; }
+
+.Flex-rowrev-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse; }
+
+.Flex-col {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column; }
+
+.Flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row; }
+
+/**
+ *  Clamping text that has more than two lines.
+ */
+.Line-clamp-1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.Line-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden; }
+
+.Line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden; }
+
+.Line-clamp-4 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden; }
+
+.Line-clamp-5 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden; }
+
+.Line-clamp-6 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden; }
+
+.Line-clamp-7 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden; }
+
+.Line-clamp-8 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  overflow: hidden; }
+
+.Line-clamp-9 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 9;
+  overflow: hidden; }
+
+.Line-clamp-10 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 10;
+  overflow: hidden; }
+
+/*# sourceMappingURL=global.css.map */

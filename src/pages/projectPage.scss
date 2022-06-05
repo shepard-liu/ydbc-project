@@ -1,0 +1,23 @@
+.project {
+    .title {}
+
+    .id {
+        margin-left: 15rem;
+        color: #888;
+        font-weight: bold;
+    }
+
+    .content {
+        padding: 10rem 0 50rem 0;
+        background-color: white;
+    }
+
+    .map-wrapper {
+        padding: 15rem;
+
+        .map {
+            height: 300rem;
+            width: 100%;
+        }
+    }
+}
